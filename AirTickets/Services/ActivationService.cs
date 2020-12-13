@@ -1,15 +1,16 @@
-﻿using System;
+﻿using AirTickets.Activation;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace AirTickets.Activation
+namespace AirTickets.Services
 {
+    // For more information on understanding and extending activation flow see
+    // https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/activation.md
     internal class ActivationService
     {
         private readonly App _app;
@@ -44,6 +45,20 @@ namespace AirTickets.Activation
                     Window.Current.Content = _shell?.Value ?? new Frame();
                 }
             }
+
+            // DEpending on activationArgs one of ActivationHandlers of DefaultActivationHandler
+            // will navigate to the first page
+            await HandleActivationAsync(activationArgs);
+        }
+
+        private Task HandleActivationAsync(object activationArgs)
+        {
+            return Task.CompletedTask;
+        }
+
+        private IEnumerable<ActivationHandler> GetActivationHandlers()
+        {
+            yield break;
         }
 
         /// <summary>
