@@ -13,20 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace AirTickets.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ShellPage : Page
+    public sealed partial class SettingsPage : Page
     {
-        public ShellPage()
+        public SettingsPage()
         {
             this.InitializeComponent();
-            shellFrame.Navigate(typeof(MainPage));
-            //ViewModel.Initialize(shellFrame, navigationView, KeyboardAccelerators);
         }
     }
 }

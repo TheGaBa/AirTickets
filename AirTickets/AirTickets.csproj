@@ -127,6 +127,9 @@
     </Compile>
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ThemeSelectorService.cs" />
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ShellPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -178,7 +185,18 @@
       <Version>2.5.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ru-ru\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en-us\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\uk-ua\Resources.resw" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
