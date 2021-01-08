@@ -1,5 +1,6 @@
-﻿using AirTickets.Services;
-using AirTickets.Views;
+﻿using AirTickets.Views;
+using Microsoft.EntityFrameworkCore;
+using Migrations;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -62,6 +63,11 @@ namespace AirTickets
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+            }
+
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                context.Database.Migrate();
             }
         }
 

@@ -10,5 +10,6 @@
 
     <Grid>
         <TextBlock Text="Hello, World!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        <Button Content="Button" Margin="106,90,0,0" VerticalAlignment="Top" Height="51" Width="153" Click="Button_Click"/>
     </Grid>
 </Page>
