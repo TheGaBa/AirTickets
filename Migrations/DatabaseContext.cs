@@ -7,6 +7,8 @@ namespace Migrations
     {
         public DbSet<Ticket> Tickets { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=MyDatabase.db");

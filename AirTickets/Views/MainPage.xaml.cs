@@ -22,7 +22,7 @@ namespace AirTickets.Views
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                context.Tickets.Add(new Ticket() { ID = Guid.NewGuid(), Name = "Name" });
+                context.Users.Add(new User() { ID = 0, Name = "USer1" });
                 context.SaveChanges();
             }
         }
