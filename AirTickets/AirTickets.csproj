@@ -210,6 +210,10 @@
     <PRIResource Include="Strings\uk-ua\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\amadeus\amadeus.csproj">
+      <Project>{4F9D5896-AF1C-4BE2-ADB6-79BEA4C4C390}</Project>
+      <Name>amadeus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Migrations\Migrations.csproj">
       <Project>{3c8eb630-97a9-45c1-ab44-365b68671038}</Project>
       <Name>Migrations</Name>
