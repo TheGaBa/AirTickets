@@ -9,8 +9,8 @@ using Migrations;
 namespace Migrations.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210112171255_FutureFlights")]
-    partial class FutureFlights
+    [Migration("20210112184801_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,42 +20,42 @@ namespace Migrations.Migrations
 
             modelBuilder.Entity("Migrations.Models.Flights", b =>
                 {
-                    b.Property<Guid>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Adult")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ArrivalCity")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ArrivalCountry")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ArrivalDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DepartureCity")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DepartureCountry")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DepartureDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("adult")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("arrivalCity")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("arrivalCountry")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("arrivalDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("departureCity")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("departureCountry")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("departureDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("price")
+                    b.Property<double>("Price")
                         .HasColumnType("REAL");
 
-                    b.Property<Guid>("userId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Flights");
 
@@ -64,63 +64,63 @@ namespace Migrations.Migrations
 
             modelBuilder.Entity("Migrations.Models.ListOfUserThings", b =>
                 {
-                    b.Property<Guid>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ArrayOfThings")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("arrayOfThings")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("userId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("ListOfUserThings");
                 });
 
             modelBuilder.Entity("Migrations.Models.Token", b =>
                 {
-                    b.Property<Guid>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("token")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Tokens");
                 });
 
             modelBuilder.Entity("Migrations.Models.User", b =>
                 {
-                    b.Property<Guid>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("name")
+                    b.Property<string>("PassportId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("passportId")
+                    b.Property<string>("Password")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("password")
+                    b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("phone")
+                    b.Property<string>("Surname")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("surname")
+                    b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("userName")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });

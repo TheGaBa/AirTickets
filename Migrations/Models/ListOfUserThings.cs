@@ -6,10 +6,10 @@ namespace Migrations.Models
 {
     public class ListOfUserThings
     {
-        public Guid id { get; set; }
+        public int Id { get; set; }
 
-        public Guid userId { get; set; }
+        public int UserId { get; set; }
 
-        public string arrayOfThings { get; set; }
+        public string ArrayOfThings { get; set; }
     }
 }

@@ -216,7 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\amadeus\amadeus.csproj">
-      <Project>{4F9D5896-AF1C-4BE2-ADB6-79BEA4C4C390}</Project>
+      <Project>{7e557d54-1954-4d1c-a9bd-b42a7d868044}</Project>
       <Name>amadeus</Name>
     </ProjectReference>
     <ProjectReference Include="..\Migrations\Migrations.csproj">
