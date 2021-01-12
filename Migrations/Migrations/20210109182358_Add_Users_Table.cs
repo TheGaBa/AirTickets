@@ -12,8 +12,7 @@ namespace Migrations.Migrations
                 name: "UsersTable",
                 columns: table => new
                 {
-                    ID = table.Column<Guid>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    ID = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
