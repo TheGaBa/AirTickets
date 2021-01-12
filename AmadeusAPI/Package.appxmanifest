@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="AirTickets"
+    Name="c3e633f5-7c1c-4507-b141-45e818ba7754"
     Publisher="CN=Evgeniya"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="6d3c4c26-4977-4534-8c36-313bd48fadcc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="c3e633f5-7c1c-4507-b141-45e818ba7754" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>AirTickets</DisplayName>
-    <PublisherDisplayName>GaBa</PublisherDisplayName>
+    <DisplayName>AmadeusAPI</DisplayName>
+    <PublisherDisplayName>Evgeniya</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="AirTickets.App">
+      EntryPoint="AmadeusAPI.App">
       <uap:VisualElements
-        DisplayName="AirTickets"
+        DisplayName="AmadeusAPI"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="AirTickets"
+        Description="AmadeusAPI"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

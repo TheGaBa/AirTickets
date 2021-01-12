@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Migrations;
 
 namespace Migrations.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210112160126_Flights")]
+    partial class Flights
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,38 +87,6 @@ namespace Migrations.Migrations
 
                     b.ToTable("Users");
                 });
-
-            modelBuilder.Entity("Migrations.Models.Token", b =>
-            {
-                b.Property<Guid>("id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("TEXT");
-
-                b.Property<string>("token")
-                    .HasColumnType("TEXT");
-
-                b.HasKey("id");
-
-                b.ToTable("Tokens");
-            });
-
-            modelBuilder.Entity("Migrations.Models.ListOfUserThings", b =>
-            {
-                b.Property<Guid>("id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("TEXT");
-
-                b.Property<string>("userId")
-                    .HasColumnType("TEXT");
-
-                b.Property<string>("arrayOfThings")
-                    .HasColumnType("TEXT");
-
-                b.HasKey("id");
-
-                b.ToTable("ListsOfUserThings");
-            });
-
 #pragma warning restore 612, 618
         }
     }
