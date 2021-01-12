@@ -2,7 +2,7 @@
 
 namespace Migrations.Models
 {
-    public class Flights
+    public abstract class Flights
     {
         public Guid id { get; set; }
         public Guid userId { get; set; }
@@ -14,6 +14,5 @@ namespace Migrations.Models
         public string arrivalCity { get; set; }
         public double price { get; set; }
         public bool adult { get; set; } = true;
-
     }
 }

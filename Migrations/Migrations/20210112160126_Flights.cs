@@ -11,8 +11,7 @@ namespace Migrations.Migrations
                 name: "Flights",
                 columns: table => new
                 {
-                    id = table.Column<Guid>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    id = table.Column<Guid>(nullable: false),
                     userId = table.Column<Guid>(nullable: true),
                     departureDate = table.Column<DateTime>(nullable: true),
                     arrivalDate = table.Column<DateTime>(nullable: true),
@@ -34,4 +33,5 @@ namespace Migrations.Migrations
             migrationBuilder.DropTable(
                 name: "Flights");
         }
+    }
 }

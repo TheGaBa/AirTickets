@@ -11,8 +11,7 @@ namespace Migrations.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    id = table.Column<Guid>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    id = table.Column<Guid>(nullable: false),
                     userName = table.Column<string>(nullable: true),
                     email = table.Column<string>(nullable: true),
                     phone = table.Column<string>(nullable: true),

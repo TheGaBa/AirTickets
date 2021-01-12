@@ -11,8 +11,7 @@ namespace Migrations.Migrations
                name: "Tokens",
                columns: table => new
                {
-                   id = table.Column<Guid>(nullable: false)
-                       .Annotation("Sqlite:Autoincrement", true),
+                   id = table.Column<Guid>(nullable: false),
                   
                    token = table.Column<string>(nullable: true),
                },

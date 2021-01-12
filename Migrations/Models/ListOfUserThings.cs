@@ -10,6 +10,6 @@ namespace Migrations.Models
 
         public Guid userId { get; set; }
 
-        public string[] arrayOfThings { get; set; }
+        public string arrayOfThings { get; set; }
     }
 }

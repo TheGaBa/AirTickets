@@ -11,9 +11,7 @@ namespace Migrations.Migrations
                name: "ListsOfUserThings",
                columns: table => new
                {
-                   id = table.Column<Guid>(nullable: false)
-                       .Annotation("Sqlite:Autoincrement", true),
-
+                   id = table.Column<Guid>(nullable: false),
                    userId = table.Column<Guid>(nullable: true),
                    arrayOfThings = table.Column<string>(nullable: true),
                },
