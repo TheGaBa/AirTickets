@@ -1,11 +1,14 @@
 ﻿using AirTickets.Views;
-using Microsoft.EntityFrameworkCore;
-using Migrations;
+using AnimatedVisuals;
+using Microsoft.UI.Xaml.Controls;
 using System;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace AirTickets
@@ -30,7 +33,7 @@ namespace AirTickets
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -63,12 +66,48 @@ namespace AirTickets
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+
+                await RunAnimatedSplashScreenAsync();
+
             }
 
-            using (DatabaseContext context = new DatabaseContext())
+            //using (DatabaseContext context = new DatabaseContext())
+            //{
+            //    context.Database.Migrate();
+            //}
+        }
+
+        /// <summary>
+        /// Runs the animated splash screen as content for the current window 
+        /// </summary>
+        /// <returns>Task completes when the animation finishes</returns>
+        private async Task RunAnimatedSplashScreenAsync()
+        {
+            // Insert splashBorder above the current window content.
+            var originalWindowContent = Window.Current.Content;
+
+            var splashBorder = new Border();
+            splashBorder.Background = (SolidColorBrush)Current.Resources["SystemControlHighlightAccentBrush"];
+
+            // Use modified LottieLogo1 animation based on user's accent color.
+            var lottieSource = new Airplane();
+
+            // Instantiate Player with modified Source
+            var player = new AnimatedVisualPlayer
             {
-                context.Database.Migrate();
-            }
+                Stretch = Stretch.Uniform,
+                AutoPlay = false,
+                Source = lottieSource,
+            };
+
+            splashBorder.Child = player;
+            Window.Current.Content = splashBorder;
+
+            // Start playing the splashscreen animation.
+            await player.PlayAsync(fromProgress: 0, toProgress: 1, looped: false);
+
+            // Reset window content after the splashscreen animation has completed.
+            Window.Current.Content = originalWindowContent;
         }
 
         /// <summary>
