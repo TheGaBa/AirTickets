@@ -8,7 +8,7 @@
 
   <Identity
     Name="AirTickets"
-    Publisher="CN=Evgeniya"
+    Publisher="CN=GaBa"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="6d3c4c26-4977-4534-8c36-313bd48fadcc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
