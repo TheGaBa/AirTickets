@@ -87,7 +87,7 @@ namespace AirTickets
             var originalWindowContent = Window.Current.Content;
 
             var splashBorder = new Border();
-            splashBorder.Background = (SolidColorBrush)Current.Resources["SystemControlHighlightAccentBrush"];
+            splashBorder.Background = (SolidColorBrush)Current.Resources["LottieBasicBrush"];
 
             // Use modified LottieLogo1 animation based on user's accent color.
             var lottieSource = new Airplane();
