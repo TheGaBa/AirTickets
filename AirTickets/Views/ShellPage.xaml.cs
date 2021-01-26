@@ -25,7 +25,7 @@ namespace AirTickets.Views
         public ShellPage()
         {
             this.InitializeComponent();
-            shellFrame.Navigate(typeof(MainPage));
+            //shellFrame.Navigate(typeof(MainPage));
             //ViewModel.Initialize(shellFrame, navigationView, KeyboardAccelerators);
         }
     }
