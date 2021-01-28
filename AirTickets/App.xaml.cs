@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -36,14 +37,7 @@ namespace AirTickets
         /// <param name="e">Details about the launch request and process.</param>
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
-            var appView = ApplicationView.GetForCurrentView();
-            appView.TitleBar.BackgroundColor = Color.FromArgb(100, 30, 31, 47);
-            appView.TitleBar.ButtonBackgroundColor = Color.FromArgb(100, 30, 31, 47);
-            appView.TitleBar.ForegroundColor = Color.FromArgb(255, 255, 255,255);
-            appView.TitleBar.ButtonForegroundColor = Color.FromArgb(255, 255, 255, 255);
-            appView.TitleBar.ButtonHoverBackgroundColor = Color.FromArgb(100, 61, 65, 136);
-
-
+            CustomizeTitleBar();
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -76,7 +70,9 @@ namespace AirTickets
                 // Ensure the current window is active
                 Window.Current.Activate();
 
+#if !DEBUG
                 await RunAnimatedSplashScreenAsync();
+#endif
 
             }
 
@@ -84,6 +80,22 @@ namespace AirTickets
             //{
             //    context.Database.Migrate();
             //}
+        }
+
+        /// <summary>
+        /// Customize titlebar
+        /// </summary>
+        private void CustomizeTitleBar()
+        {
+            // Customize button colors
+            var appView = ApplicationView.GetForCurrentView();
+            appView.TitleBar.ButtonBackgroundColor = Color.FromArgb(100, 61, 65, 136);
+            appView.TitleBar.ButtonForegroundColor = Color.FromArgb(255, 255, 255, 255);
+            appView.TitleBar.ButtonHoverBackgroundColor = Color.FromArgb(100, 30, 31, 47);
+
+            // Hide default title bar.
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
         }
 
         /// <summary>
