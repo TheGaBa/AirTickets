@@ -6,23 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Background>
-        <ImageBrush ImageSource="/Assets/Visual/flight.jpeg" Stretch="Fill"/>
-    </Page.Background>
+
     <!--<Page.DataContext>
         <viewModels:ShellViewModel x:Name="ViewModel"/>
     </Page.DataContext>-->
 
-    <Grid Background="#EA3D4188">
+    <Page.Background>
+        <ImageBrush ImageSource="/Assets/Visual/flight.jpeg" Stretch="Fill"/>
+    </Page.Background>
+
+    <!--<Grid Background="#F83D4188">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
             <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" CornerRadius="0,30,30,0" Background="#BF1E1F2F" >
-            <!--<Button Height="57" Width="134" Background="Aqua" />-->
-        </StackPanel>
-        <!--<Frame x:Name="shellFrame" Background="#FF1B1D3C" />-->
-        <Image Grid.ColumnSpan="2" />
+        </Grid.ColumnDefinitions>-->
+        <!--<StackPanel Grid.Column="0" CornerRadius="0,30,30,0" Background="#991E1F2F" />-->
+    <NavigationView Style="{StaticResource NavigationViewStyle}" IsBackButtonVisible="Collapsed" Background="#F83D4188" >
+        <Frame />
+    </NavigationView>
 
-    </Grid>
+
+    <!--</Grid>-->
 </Page>

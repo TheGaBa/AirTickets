@@ -15,6 +15,7 @@
                     <SolidColorBrush x:Key="LottieBasicBrush"
                          Color="{StaticResource LottieBasic}" />
                 </ResourceDictionary>
+                <ResourceDictionary Source="/NavigationViewStyle.xaml"/>
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
