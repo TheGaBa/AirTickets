@@ -21,7 +21,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>-->
         <!--<StackPanel Grid.Column="0" CornerRadius="0,30,30,0" Background="#991E1F2F" />-->
-    <NavigationView Style="{StaticResource NavigationViewStyle}" IsBackButtonVisible="Collapsed" Background="#F83D4188" >
+    <NavigationView Style="{StaticResource NavigationViewStyle}" IsBackButtonVisible="Collapsed" PaneDisplayMode="Left" Background="#F83D4188" >
+        <NavigationView.Resources>
+            <ResourceDictionary>
+                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="#1E1F2F"/>
+                <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="#1E1F2F" />
+            </ResourceDictionary>
+        </NavigationView.Resources>
         <Frame />
     </NavigationView>
 
